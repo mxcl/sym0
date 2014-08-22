@@ -1,0 +1,1 @@
+As reluctant as I was to pollute CocoaPods with yet another "utility functions I use" pod, this one is better than all the other trash because it has zero symbols, zero function call overhead and zero category pollution. Enjoy.
