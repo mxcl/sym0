@@ -112,6 +112,11 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
 }
 
 
+//////////////////////////////////////////////////////////////////// UIResponder
+#define UIResponderResignFirst() \
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil]
+
+
 /////////////////////////////////////////////////////////////////////// UIScreen
 @import UIKit.UIScreen;
 

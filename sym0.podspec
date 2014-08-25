@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "sym0"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.source       = { :git => "https://github.com/mxcl/sym0.git" }
   s.requires_arc = true
   s.source_files = 'sym0.h'
