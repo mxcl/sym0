@@ -85,8 +85,6 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
 
 
 //////////////////////////////////////////////////////////////////////// UIColor
-@import UIKit.UIColor;
-
 #define UIColorFromRGB(rgbValue) \
     [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
                     green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
@@ -118,8 +116,6 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
 
 
 /////////////////////////////////////////////////////////////////////// UIScreen
-@import UIKit.UIScreen;
-
 #define UINavigationBarHeight 44.f
 #define UIScreenHeight UIScreen.mainScreen.bounds.size.height
 #define UIScreenWidth UIScreen.mainScreen.bounds.size.width
@@ -137,8 +133,6 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
 
 
 ///////////////////////////////////////////////////////////////////////// UIView
-@import UIKit.UIView;
-
 #define UIViewAllSubviews(rootview) ({ \
     NSMutableArray *stack = [NSMutableArray arrayWithObjects:rootview, nil]; \
     NSMutableArray *views = [NSMutableArray array]; \
