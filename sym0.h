@@ -119,6 +119,7 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
 #define UINavigationBarHeight 44.f
 #define UIScreenHeight UIScreen.mainScreen.bounds.size.height
 #define UIScreenWidth UIScreen.mainScreen.bounds.size.width
+#define UIScreenCenter CGRectGetCenter(UIScreen.mainScreen.bounds)
 #define UIStatusBarHeight 20.f
 #define UIKeyboardHeight 216.f
 #define UIToolbarHeightLandscape 32.f
