@@ -127,10 +127,16 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
 #define UIPageControlHeight 37.f
 
 #define UIScreen320x480() \
-    ({ UIScreenHeight <= 480; })
+    ({ UIScreenHeight == 480; })
 
 #define UIScreen320x568() \
-    ({ UIScreenHeight <= 568; })
+    ({ UIScreenHeight == 568; })
+        
+#define UIScreen375x667() \
+    ({ UIScreenHeight == 667; })
+
+#define UIScreen414x736() \
+    ({ UIScreenHeight == 736; })
 
 
 ///////////////////////////////////////////////////////////////////////// UIView
