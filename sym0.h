@@ -74,6 +74,21 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
 }
 
 
+//////////////////////////////////////////////////////////////////// SecKeychain
+#define SecKeychainReset() { \
+    void (^rm)(CFTypeRef) = ^(CFTypeRef secClass) { \
+        id dict = @{(__bridge id)kSecClass: (__bridge id)secClass}; \
+        OSStatus result = SecItemDelete((__bridge CFDictionaryRef) dict); \
+        NSAssert(result == noErr || result == errSecItemNotFound, @"Error deleting keychain data (%d)", (int)result); \
+    }; \
+    rm(kSecClassGenericPassword); \
+    rm(kSecClassInternetPassword); \
+    rm(kSecClassCertificate); \
+    rm(kSecClassKey); \
+    rm(kSecClassIdentity); \
+}
+
+
 ////////////////////////////////////////////////////////////////////// SKProduct
 #define SKProductPriceString(product) ({ \
     NSNumberFormatter *nf = [NSNumberFormatter new]; \
