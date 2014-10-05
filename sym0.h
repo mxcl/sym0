@@ -168,9 +168,10 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
 })
 
 #define UIViewParentController(view) ({ \
-    while ([view isKindOfClass:[UIView class]]) \
-        view = [view nextResponder]; \
-    view; \
+    UIResponder *responder = view; \
+    while ([responder isKindOfClass:[UIView class]]) \
+        responder = [responder nextResponder]; \
+    responder; \
 })
 
 
