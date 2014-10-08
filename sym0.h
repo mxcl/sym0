@@ -171,7 +171,7 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
     UIResponder *responder = view; \
     while ([responder isKindOfClass:[UIView class]]) \
         responder = [responder nextResponder]; \
-    responder; \
+    (UIViewController *)responder; \
 })
 
 
