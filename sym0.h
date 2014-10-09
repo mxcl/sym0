@@ -12,6 +12,16 @@
 })
 
 
+//////////////////////////////////////////////////////////////////////// NSArray
+#define NSArrayMap(array, block) ({ \
+    id o, mapped[array.count]; \
+    NSUInteger ii = 0, jj = 0; \
+    for (id mappable in array) \
+        if (o = block(mappable)) mapped[jj++] = o; \
+    [NSArray arrayWithObjects:mapped count:jj]; \
+})
+
+
 ////////////////////////////////////////////////////////////////// NSFileManager
 @import Foundation.NSPathUtilities;
 
