@@ -14,11 +14,15 @@
 
 //////////////////////////////////////////////////////////////////////// NSArray
 #define NSArrayMap(array, block) ({ \
-    id o, mapped[array.count]; \
-    NSUInteger ii = 0, jj = 0; \
+    id o; id mapped[array.count]; \
+    NSUInteger jj = 0; \
     for (id mappable in array) \
-        if (o = block(mappable)) mapped[jj++] = o; \
+        if ((o = block(mappable))) mapped[jj++] = o; \
     [NSArray arrayWithObjects:mapped count:jj]; \
+})
+
+#define NSArraySelect(array, block) NSArrayMap(array, ^(id obj){ \
+    return block(obj) ? obj : nil; \
 })
 
 
