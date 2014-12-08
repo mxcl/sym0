@@ -125,11 +125,13 @@ static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const*const de
 @import Foundation.NSObjCRuntime;
 
 #define UIDeviceSystemMajorVersion() \
-    (NSFoundationVersionNumber >= 1047.250000 \
+    (NSFoundationVersionNumber >= 1134.10 \
         ? 8 \
-        : NSFoundationVersionNumber > 993.00 \
+        : NSFoundationVersionNumber >= 1047.00 \
             ? 7 \
-            : 6)
+                : NSFoundationVersionNumber >= 993.00 \
+                ? 6 \
+                : 5)
 
 
 ///////////////////////////////////////////////////////////////////////// UIFont
